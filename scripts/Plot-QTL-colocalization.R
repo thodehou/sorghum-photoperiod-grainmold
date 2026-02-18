@@ -1,6 +1,6 @@
 source("functions/QTL_colocalization.R")
 
-qtl_data <- read.csv("data/sheet.csv")
+qtl_data <- read.csv("data/QTL-colocalization.csv")
 qtl_data$Trait <- as.factor(qtl_data$Trait)
 qtl_data$Chr_string <- factor(qtl_data$Chr_string,
                               levels = paste0("Chr", sprintf("%02d", 1:10)))
@@ -17,7 +17,7 @@ ma_genes <- data.frame(
 
 chr_levels <- levels(qtl_data$Chr_string)
 
-jpeg("outputs/QTL_colocalization_genes_function.jpg", width=1600, height=1200, res=150)
+jpeg("outputs/QTL_colocalization.jpg", width=1600, height=1200, res=150)
 
 segplot(
   reorder(factor(QTL_Id), Chr_string) ~ Start_QTL_v3 + End_QTL_v3 | Chr_string,
@@ -33,7 +33,7 @@ segplot(
   colorkey = NULL,
   
   scales = list(x=list(draw=FALSE)),
-  panel = add_ma_genes(ma_genes, chr_levels)  # <-- ici on ajoute les gènes
+  panel = add_ma_genes(ma_genes, chr_levels)
 )
 
 dev.off()
