@@ -1,6 +1,6 @@
 # sorghum-photoperiod-grainmold
 
-Reproducible code, data, and outputs supporting the paper:
+Data and code supporting my first PhD research paper :
 **A stable genomic variant for photoperiodic flowering plasticity to enhance grain mold escape in sorghum**
 
 ### Repository structure
